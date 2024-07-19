@@ -2,9 +2,16 @@
 
 ## 数据准备：
 
-在这里进行测试相关qa数据。如./data/qa.json格式所示
+在这里进行测试相关qa数据。如./data/qa.json格式，如下图所示，
 
-准备好qa数据后，运行
+```json
+{
+"q":"1+1=?",
+"a":"2"
+}
+```
+
+准备好qa的json数据后，运行
 
 ```shell
 python prepare_data.py
@@ -14,7 +21,7 @@ python prepare_data.py
 
 ## 测试：
 
-运行 
+运行
 
 ```shell
 python main.py
