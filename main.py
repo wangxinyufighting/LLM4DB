@@ -2,12 +2,6 @@ import requests
 import json
 from utils import stream_print
 
-
-'''
-
-'''
-
-
 while True:
     question = input("请问关于《大模型赋能数据库调优》这个实验，您有什么问题？可以随时想我提问哦\n\n")
     data = {'q':question}
