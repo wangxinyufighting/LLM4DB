@@ -1,0 +1,5 @@
+{
+    "og_qa_data_json_path": "./data/qa.json",
+    "qa_data_csv_path": "./data/qa.csv",
+    "qa_data_with_embedding": "./data/qa_emb.csv"
+}

@@ -1,0 +1,22 @@
+[
+    {
+        "q": "实验视频演示",
+        "a": "可以通过这里观看实验演示视频哦~\nhttps://www.youtube.com/watch?v=Hz5Zck-9TlA&feature=youtu.be"
+    },
+    {
+        "q": "实验项目地址是哪里？",
+        "a": "https://github.com/SolidLao/GPTuner"
+    },
+    {
+        "q": "参考的论文有哪些呢？",
+        "a": "可以参考以下这些论文哦\n\n[1]GPTuner: A Manual-Reading Database Tuning System via GPT-Guided Bayesian Optimization\n[2]A Demonstration of GPTuner: A GPT-Based Manual-Reading Database Tuning System"
+    },
+    {
+        "q": "需要迭代多少轮",
+        "a": "需要视用到的基座模型和具体的任务而定。基座模型越强大，收敛的迭代数越低。例如，如果使用的是GPT4，大概在迭代20轮后收敛。"
+    },
+    {
+        "q": "如何开始实验？",
+        "a": "在开始实验之前，同学们需要将github的项目clone到自己的电脑上。\n项目地址为：https://github.com/SolidLao/GPTuner。\n\n进入项目目录后，我们正式开始实验。\n\n第一步, 需要安装相关数据库。例如PostgreSQL。请参考以下命令：\n\nsudo apt-get update\nsudo apt-get install postgresql-14\n\n====================\n第二步, 我们需要安装测试数据库的benchmark。这里我们使用的是BenchBase。请参考以下命令\n\ncd ./scripts\nsh install_benchbase.sh postgres\n\n注意：该脚本在openjdk版本'17.0.8.1'2023-08-24上测试，（您可能需要将openjdk更新到版本21），请先准备好您的JAVA环境\n\n====================\n第三步，构建benchmark。请参考如下命令：\n\nsh build_benchmark.sh postgres tpch\n\n注意：可以通过修改./benchbase/target/benchbase-postgres/config/postgres/sample_{your_target_benchmark}_config.xml这个文件进行个性化设置。\n\n====================\n第四步，安装相关依赖。\n\nsudo pip install -r requirements.txt\n\n====================\n第五步，运行GPTuner来优化DBMS。\n\n # PYTHONPATH=src python src/run_gptuner.py <dbms> <benchmark> <timeout> <seed>\nPYTHONPATH=src python src/run_gptuner.py postgres tpch 180 -seed=100\n\n这里的<dbms>填写DBMS的名字，如postgres or mysql。<benchmark> is the target workload (e.g., tpch or tpcc), <timeout> is the maximum time allowed to stress-test the benchmark, <seed> is the random seed used by the optimizer.\n\nNote: modify configs/postgres.ini to determine the target DBMS first, the restart and recover commands depend on the environment and we provide Docker version\n\nNote: modify src/run_gptuner.py to set up your api_base, api_key and model first\n\n====================\n第六步，也是最后一步，查看调优的结果。\n\nThe optimization result is stored in optimization_results/{dbms}/{stage}/{seed}/runhistory.json, where {dbms} is the target DBMS, {stage} is coarse or fine and {seed} is the random seed given by user."
+    }
+]
