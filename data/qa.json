@@ -1,5 +1,9 @@
 [
     {
+        "q": "实验需要什么数据库？怎么安装？",
+        "a": "本实验可以使用PostgreSQL或MySQL数据库。这里以PostgreSQL为例：\n\nsudo apt-get update\nsudo apt-get install postgresql-14"
+    },
+    {
         "q": "实验视频演示",
         "a": "可以通过这里观看实验演示视频哦~\nhttps://www.youtube.com/watch?v=Hz5Zck-9TlA&feature=youtu.be"
     },

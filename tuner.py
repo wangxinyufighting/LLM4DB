@@ -8,9 +8,6 @@ from utils import search_reviews, get_chatgpt_response, load_config
 import pandas as pd
 import numpy as np
 
-API_KEY = 'sk-exC6cb6BemF27sRP618dC8A8Ff684d2f8bF4C6Ac46F8D757'
-client = OpenAI(api_key=API_KEY, base_url="https://www.jcapikey.com/v1")
-
 app = FastAPI()
 
 class question(BaseModel):

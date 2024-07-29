@@ -8,8 +8,8 @@ import numpy as np
 import time
 import sys
 
-API_KEY = 'sk-exC6cb6BemF27sRP618dC8A8Ff684d2f8bF4C6Ac46F8D757'
-client = OpenAI(api_key=API_KEY, base_url="https://www.jcapikey.com/v1")
+API_KEY = 'sk-1EO1rRv4dJCj8m9RbnWEoelXlNS0YjKF4KWDGKIrQpDYra6U'
+client = OpenAI(api_key=API_KEY, base_url="https://api.chatanywhere.tech")
 
 
 def get_chatgpt_response(query):
